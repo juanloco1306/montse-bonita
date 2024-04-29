@@ -36,6 +36,9 @@ section .content
     max-width: 100%;
     color: gold;
 }
+section .content h1, section .content h2 {
+            display: none;
+        }
 section .content h1
 {
     font-size: 5em;
@@ -144,6 +147,19 @@ function stars(){
                 line(mouseX, mouseY, pmouseX, pmouseY)
             }
         }
+
+        function showText() {
+            // Obtener las etiquetas h1 y h2
+            var h1 = document.querySelector('section .content h1');
+            var h2 = document.querySelector('section .content h2');
+            
+            // Mostrar las etiquetas h1 y h2
+            h1.style.display = 'block';
+            h2.style.display = 'block';
+        }
+
+        // Llamar a la función para mostrar el texto después de 10 segundos
+        setTimeout(showText, 10000);
 
         document.addEventListener('DOMContentLoaded', function(){
             setup();
