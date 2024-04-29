@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Stars</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <section>
+        <div class="content">
+            <h1>Mi cafe favorito</h1>
+            <h2>es el de tus ojos</h2>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+    <script>
+        function setup(){
+            createCanvas(windowWidth, windowHeight);
+        }
+
+        function draw(){
+            strokeWeight(50);
+            if (mouseIsPressed === true){
+                line(mouseX, mouseY, pmouseX, pmouseY)
+            }
+        }
+
+        function stars(){
+            let e = document.createElement('div');
+            e.setAttribute('class','star');
+            document.body.appendChild(e);
+            e.style.left = Math.random() * + innerWidth + 'px';
+
+            let size = Math.random() * 12;
+            let duration = Math.random() * 3;
+
+            e.style.fontSize = 12 + size+'px';
+            e.style.animationDuration = 2 + duration+'s';
+
+            setTimeout(function(){
+                document.body.removeChild(e);
+            },5000)
+        }
+
+        setInterval(function(){
+            stars()
+        },100)
+    </script>
+</body>
+</html>
