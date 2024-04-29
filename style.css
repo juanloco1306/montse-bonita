@@ -7,23 +7,23 @@
 body
 {
     background: #111;
-    min-height: 100vh;
+    min-height: 100%;
     overflow: hidden;
 }
 section
 {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 section .content
 {
-    max-width: 80%;
+    max-width: 100%;
     color: gold;
 }
 section .content h1
@@ -47,7 +47,7 @@ canvas
 }
 .star
 {
-    position: absolute;
+    position: fixed;
     top: -20px;
     color: #fff;
     animation: animate 5s linear forwards;
